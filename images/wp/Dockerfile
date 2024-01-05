@@ -190,8 +190,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 VOLUME /var/www/html
 
-COPY --chown=www-data:www-data ./public_html/images/wp/wp-config-docker.php /usr/src/wordpress/
-COPY ./public_html/images/wp/docker-entrypoint.sh /usr/local/bin/
+COPY --chown=www-data:www-data ./images/wp/wp-config-docker.php /usr/src/wordpress/
+COPY ./images/wp/docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
 	&& mkdir /workspaces
 
