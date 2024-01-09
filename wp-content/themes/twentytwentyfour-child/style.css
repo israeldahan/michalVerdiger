@@ -89,7 +89,7 @@ nf-fields-wrap nf-field:nth-child(6) {
     background: #d4145a;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 0 70px;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
