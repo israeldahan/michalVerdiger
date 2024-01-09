@@ -41,8 +41,11 @@ news
 #nf-form-2-cont.form-elector {
     background: #233A59;
     color: white;
+    margin-top: 0;
 }
-
+.nf-form-wrap.ninja-forms-form-wrap{
+    padding: 15px;
+}
 .nf-form-fields-required {
     display: none;
 }
@@ -50,23 +53,30 @@ news
 nf-fields-wrap {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: "fname phone email"
+                            "msg msg msg"
+                            "submit submit submit";
 }
 
 nf-fields-wrap nf-field:nth-child(1) {
-    grid-column: 1 / 2;
+    grid-area: fname;
 }
 
 nf-fields-wrap nf-field:nth-child(2) {
-    grid-column: 2 / 3;
+    grid-area: phone;
 }
 
 nf-fields-wrap nf-field:nth-child(3) {
-    grid-column: 3 / 4;
+    grid-area: email;
 }
 
 nf-fields-wrap nf-field:nth-child(4) {
-    grid-column: 1 / 4;
+    grid-area: msg;
+}
+
+nf-fields-wrap nf-field:nth-child(5) {
+    grid-area: submit;
+    align-self: end;
 }
 
 .form-elector .nf-form-content input[type=submit] {
