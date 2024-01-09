@@ -67,7 +67,7 @@ function send_data_to_api( $form_data ) {
     'fullName' => $full_name, 
     'email' => $email, 
     'phone' => $phone, 
-    'subject' => $message, 
+    'details' => $message, 
     'sourceName' => 'landingPageWordpress');
 
     http://localhost:9020/?page_id=40    // use key 'http' even if you send the request to https://...
@@ -85,12 +85,9 @@ function send_data_to_api( $form_data ) {
   if ($result === false) {
       /* Handle error */
   }
-
-
+  // $form_settings = $form_data[ 'settings' ]; // Form settings.
   
-  $form_settings = $form_data[ 'settings' ]; // Form settings.
-  
-  $extra_data = $form_data[ 'extra' ]; // Extra data included with the submission.
+  // $extra_data = $form_data[ 'extra' ]; // Extra data included with the submission.
   
   return $form_data;
 }
