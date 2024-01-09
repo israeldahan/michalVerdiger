@@ -119,6 +119,13 @@ p.whatsapp-block a {
     display: none;
 }
 
+.form-text-html {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     nf-fields-wrap {
         display: grid;
