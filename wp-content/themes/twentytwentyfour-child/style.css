@@ -148,6 +148,7 @@ p.whatsapp-block a {
         display: flex;
         align-items: center;
         gap: 10px;
+        justify-self: center;
     }
 
     .img-mobile {
