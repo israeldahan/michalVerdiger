@@ -53,7 +53,7 @@ news
 nf-fields-wrap {
     display: grid;
     grid-gap: 10px;
-    grid-template-areas: "html"
+    grid-template-areas: "html html html"
                          "fname phone email"
                          "msg msg msg"
                          "submit submit submit";
