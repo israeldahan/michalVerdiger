@@ -94,3 +94,23 @@ nf-fields-wrap nf-field:nth-child(6) {
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+
+.whatsapp-block-parent {
+    position: relative;
+}
+
+p.whatsapp-block {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    background-color: #ffffff40;
+    padding: 5px;
+}
+
+
+p.whatsapp-block a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
