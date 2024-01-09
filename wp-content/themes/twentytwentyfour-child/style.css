@@ -61,6 +61,7 @@ nf-fields-wrap {
 
 nf-fields-wrap nf-field:nth-child(1) {
     grid-area: html;
+    place-self: center;
 }
 
 nf-fields-wrap nf-field:nth-child(2) {
