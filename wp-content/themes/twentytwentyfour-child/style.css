@@ -114,3 +114,32 @@ p.whatsapp-block a {
     align-items: center;
     gap: 10px;
 }
+
+.img-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .whatsapp-block-parent {
+        position: relative;
+    }
+
+    p.whatsapp-block {
+        background-color: #ffffff40;
+        padding: 5px;
+    }
+    
+    p.whatsapp-block a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .img-mobile {
+        display: block;
+    }
+
+    .img-desktop {
+        display: none;
+    }
+}
