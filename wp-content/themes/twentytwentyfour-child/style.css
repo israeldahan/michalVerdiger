@@ -126,6 +126,16 @@ p.whatsapp-block a {
     text-align: center;
 }
 
+#nf-form-2-cont #ninja_forms_required_items, .nf-field-container {
+    margin: 0;
+    padding: 0;
+}
+
+#nf-form-2-cont .nf-form-content input:not([type=button]) {
+    border-radius: 5px;
+}
+
+
 @media screen and (max-width: 600px) {
     nf-fields-wrap {
         display: grid;
