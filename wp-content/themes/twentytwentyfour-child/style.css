@@ -153,6 +153,8 @@ p.whatsapp-block a {
 
     .img-mobile {
         display: block;
+        margin: 0;
+        padding: 0;
     }
 
     .img-desktop {
