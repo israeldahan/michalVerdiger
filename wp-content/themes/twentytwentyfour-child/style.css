@@ -76,7 +76,7 @@ nf-fields-wrap nf-field:nth-child(4) {
 
 nf-fields-wrap nf-field:nth-child(5) {
     grid-area: submit;
-    align-self: end;
+    place-self: end;
 }
 
 .form-elector .nf-form-content input[type=submit] {
