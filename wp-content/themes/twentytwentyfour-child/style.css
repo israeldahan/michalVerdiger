@@ -126,7 +126,7 @@ p.whatsapp-block a {
     text-align: center;
 }
 
-#nf-form-2-cont #ninja_forms_required_items, .nf-field-container {
+#nf-form-2-cont #ninja_forms_required_items, .nf-field-container, #nf-form-2-cont .nf-form-content textarea {
     margin: 0;
     padding: 0;
 }
