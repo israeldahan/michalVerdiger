@@ -120,12 +120,27 @@ p.whatsapp-block a {
 }
 
 @media screen and (max-width: 600px) {
+    nf-fields-wrap {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas: "html"
+                             "fname" 
+                             "phone" 
+                             "email"
+                             "msg"
+                             "submit";
+    }
+    
     .whatsapp-block-parent {
         position: relative;
     }
 
     p.whatsapp-block {
-        background-color: #ffffff40;
+        position: relative;
+        left: 0;
+        top: 0;
+        justify-content: center;
+        background-color: #c2c2c2;
         padding: 5px;
     }
     
