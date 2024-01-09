@@ -59,7 +59,7 @@ nf-fields-wrap {
                          "submit submit submit";
 }
 
-nf-fields-wrap nf-field:nth-child(2) {
+nf-fields-wrap nf-field:nth-child(1) {
     grid-area: html;
 }
 
