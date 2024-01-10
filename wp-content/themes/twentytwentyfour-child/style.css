@@ -89,7 +89,7 @@ nf-fields-wrap nf-field:nth-child(6) {
     grid-area: msg;
 }
 
-nf-fields-wrap nf-field:nth-child(6) {
+nf-fields-wrap nf-field:nth-child(7) {
     grid-area: submit;
     place-self: end;
 }
