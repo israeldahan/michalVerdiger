@@ -37,6 +37,10 @@ news
  Text Domain:  twentytwentyfourchild
 */
 
+.landing-page-main{
+    padding: 0;
+    margin: 0;
+}
 
 #nf-form-2-cont.form-elector {
     background: #233A59;
@@ -55,6 +59,7 @@ nf-fields-wrap {
     grid-gap: 10px;
     grid-template-areas: "html html html"
                          "fname phone email"
+                         "subject subject subject"
                          "msg msg msg"
                          "submit submit submit";
 }
@@ -77,6 +82,10 @@ nf-fields-wrap nf-field:nth-child(4) {
 }
 
 nf-fields-wrap nf-field:nth-child(5) {
+    grid-area: subject;
+}
+
+nf-fields-wrap nf-field:nth-child(6) {
     grid-area: msg;
 }
 
@@ -144,6 +153,7 @@ p.whatsapp-block a {
                              "fname" 
                              "phone" 
                              "email"
+                             "subject"
                              "msg"
                              "submit";
     }
