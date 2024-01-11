@@ -53,7 +53,7 @@ function my_ninja_forms_after_submission( $form_data ){
         'phone' => $phone, 
         'subject' => $subject,
         'details' => $message, 
-        'sourceName' => 'landingPage' + ' ' + $fields_by_key["req_id"]["value"]
+        'sourceName' => 'landingPage' . ' ' . $fields_by_key["req_id"]["value"]
       );
 
       // use key 'http' even if you send the request to https://...
