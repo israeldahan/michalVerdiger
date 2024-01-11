@@ -86,6 +86,8 @@ function send_data_to_api( $form_data ) {
 
     if ($result === false) {
     /* Handle error */
+      error_log("error");
+      error_log($result);
     }
 
     return $form_data;
