@@ -75,7 +75,7 @@ function send_data_to_api( $form_data ) {
     // use key 'http' even if you send the request to https://...
     $options = [
     'http' => [
-        'header' => "Content-type: application/json\r\n",
+        'header' => "Content-type: application/json",
         'method' => 'POST',
         'content' => http_build_query($data),
     ],
