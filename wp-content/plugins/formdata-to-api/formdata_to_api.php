@@ -73,23 +73,38 @@ function send_data_to_api( $form_data ) {
 
 
     // use key 'http' even if you send the request to https://...
-    $options = [
-    'http' => [
-        'header' => "Content-type: application/json",
-        'method' => 'POST',
-        'content' => http_build_query($data),
-    ],
-    ];
+    // $options = [
+    // 'http' => [
+    //     'header' => "Content-type: application/json",
+    //     'method' => 'POST',
+    //     'content' => http_build_query($data),
+    // ],
+    // ];
 
-    $context = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
+    // $context = stream_context_create($options);
+    // $result = file_get_contents($url, false, $context);
 
+    // if ($result === false) {
+    // /* Handle error */
+    //   error_log("error");
+    //   error_log($result);
+    // }
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    
+    $result = curl_exec($ch);
+    
     if ($result === false) {
-    /* Handle error */
-      error_log("error");
-      error_log($result);
+        /* Handle error */
+        error_log("error");
+        error_log(curl_error($ch));
     }
-
+    
+    curl_close($ch);
     return $form_data;
 }
 // add_action( 'ninja_forms_after_submission', 'my_ninja_forms_after_submission' );
