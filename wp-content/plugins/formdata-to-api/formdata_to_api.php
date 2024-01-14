@@ -40,6 +40,18 @@ function send_data_to_api($form_data)
   $message = '';
 
   $form_id = $form_data['id']; // Form ID.
+  
+  $susbjectArr = array(
+    'btl' => 'ביטוח לאומי',
+    'bnf' => 'בריאות הנפש',
+    'edu' => 'חינוך',
+    'war' => 'חרבות ברזל',
+    'grows' => 'קליטה ועליה',
+    'pros' => 'רווחה',
+    'svc' => 'שירות לאומי/צבאי',
+    'other' => 'אחר',
+  );
+
   if ($form_id == 2) { // Form ID.
     foreach ($form_data['fields'] as $field) { // Field settigns, including the field key and value.
       $field_id = $field['id']; // Field ID.
@@ -55,7 +67,7 @@ function send_data_to_api($form_data)
         $phone = $field_value;
       }
       if ($field_key == 'subject') {
-        $subject = $field_value;
+        $subject = $susbjectArr[$field_value];
       }
       if ($field_key == 'message') {
         $message = $field_value;
