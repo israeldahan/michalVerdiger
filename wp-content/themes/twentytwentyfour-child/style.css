@@ -139,12 +139,11 @@ p.whatsapp-block a {
     margin: 0;
     padding: 0;
 }
-
-#nf-form-2-cont .nf-form-content input:not([type=button]), #nf-form-2-cont .nf-form-content textarea  {
+.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
     border-radius: 5px;
 }
 
-.nf-form-content .listselect-wrap .nf-field-element div, .nf-form-content .ninja-forms-field {
+.nf-error .ninja-forms-field, .nf-form-content .list-select-wrap>div select {
     padding: 12px 50px 12px 12px;
     border-radius: 5px;
 }
