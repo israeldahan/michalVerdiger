@@ -143,7 +143,7 @@ p.whatsapp-block a {
     border-radius: 5px;
 }
 
-.nf-error .ninja-forms-field, .nf-form-content .list-select-wrap>div select {
+.nf-error .ninja-forms-field, .nf-pass .ninja-forms-field, .nf-form-content .list-select-wrap>div select {
     padding: 12px 50px 12px 12px;
     border-radius: 5px;
 }
