@@ -144,6 +144,10 @@ p.whatsapp-block a {
     border-radius: 5px;
 }
 
+.nf-form-content .listselect-wrap .nf-field-element div, .nf-form-content .ninja-forms-field {
+    padding: 12px 50px 12px 12px;
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 600px) {
     nf-fields-wrap {
