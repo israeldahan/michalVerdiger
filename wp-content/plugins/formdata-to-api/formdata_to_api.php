@@ -27,6 +27,7 @@ Author URI: http://israeldahan.co.il/
 // 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 // 	dbDelta( $sql );
 // }
+require 'vendor/autoload.php';
 
 add_filter('ninja_forms_submit_data', 'send_data_to_api');
 
@@ -72,8 +73,14 @@ function send_data_to_api($form_data)
       if ($field_key == 'message') {
         $message = $field_value;
       }
+      if ($field_key == 'file_upload') {
+        $file_upload   = $field['files'][0]['tmp_name'];
+      }
     }
 
+    $file_path = wp_get_upload_dir()['basedir'] . '/ninja-forms/tmp/' . $file_upload;
+
+    
     $url = 'https://app.seker.live/fm1/form-data';
     $data = array(
       'externalId' => 'KEfdt',
@@ -84,24 +91,27 @@ function send_data_to_api($form_data)
       'details' => $message,
       'sourceName' => 'landingPageWordpress'
     );
+
+
+
     $url = add_query_arg($data, $url);
 
-    $args = array(
-      'headers'     => array(
-        'Content-Type' => 'application/json'
-      ),
-      'httpversion' => '1.0',
-      'sslverify'   => false,
-    );
+    $client = new GuzzleHttp\Client();
+    $options = [
+      'multipart' => [
+        [
+          'name' => 'file',
+          'contents' => GuzzleHttp\Psr7\Utils::tryFopen($file_path, 'r'),
+          'filename' => $file_path,
+          'headers'  => [
+            'Content-Type' => 'application/image'
+          ]
+        ]
+    ]];
+    $request = new \GuzzleHttp\Psr7\Request('POST', $url);
+    $res = $client->sendAsync($request, $options)->wait(); 
+    echo $res->getBody();
 
-    $wp_http = new WP_Http();
-    $response = $wp_http->post($url, $args);
-
-    if (is_wp_error($response)) {
-      error_log($response->get_error_message());
-    } else {
-      // handle the response
-    }
-  }
+      }
   return $form_data;
 }
