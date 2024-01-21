@@ -77,8 +77,11 @@ function send_data_to_api($form_data)
         $file_upload   = $field['files'][0]['tmp_name'];
       }
     }
-
-    $file_path = wp_get_upload_dir()['basedir'] . '/ninja-forms/tmp/' . $file_upload;
+    if ($file_upload != ''){
+      $file_path = wp_get_upload_dir()['basedir'] . '/ninja-forms/tmp/' . $file_upload;
+    } else {
+      $file_path = '';
+    }
 
 
     $url = 'https://app.seker.live/fm1/form-data';
@@ -97,6 +100,7 @@ function send_data_to_api($form_data)
     $url = add_query_arg($data, $url);
 
     $client = new GuzzleHttp\Client();
+    if ($file_path != ''){
     $options = [
       'multipart' => [
         [
@@ -109,6 +113,11 @@ function send_data_to_api($form_data)
         ]
       ]
     ];
+    
+    } else {
+      $options = [];
+    }
+
     $request = new \GuzzleHttp\Psr7\Request('POST', $url);
     $res = $client->sendAsync($request, $options)->wait();
     $body = $res->getBody();
