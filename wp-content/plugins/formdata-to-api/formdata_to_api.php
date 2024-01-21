@@ -110,7 +110,14 @@ function send_data_to_api($form_data)
     ]];
     $request = new \GuzzleHttp\Psr7\Request('POST', $url);
     $res = $client->sendAsync($request, $options)->wait(); 
-    echo $res->getBody();
+    $body = $res->getBody();
+    $body = json_decode($body);
+    if ($res->getStatusCode() == '200') {
+      $form_data['actions']['success_message'] = 'הטופס נשלח בהצלחה';
+    } else {
+      $form_data['actions']['success_message'] = 'הטופס לא נשלח';
+      error_log($res->getStatusCode());
+    }
 
       }
   return $form_data;
