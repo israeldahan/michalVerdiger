@@ -39,7 +39,8 @@ function send_data_to_api($form_data)
   $phone = '';
   $subject = '';
   $message = '';
-
+  $file_upload = '';
+  
   $form_id = $form_data['id']; // Form ID.
 
   $susbjectArr = array(
