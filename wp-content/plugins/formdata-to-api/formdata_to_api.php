@@ -41,7 +41,7 @@ function send_data_to_api($form_data)
   $message = '';
 
   $form_id = $form_data['id']; // Form ID.
-  
+
   $susbjectArr = array(
     'btl' => 'ביטוח לאומי',
     'bnf' => 'בריאות הנפש',
@@ -80,7 +80,7 @@ function send_data_to_api($form_data)
 
     $file_path = wp_get_upload_dir()['basedir'] . '/ninja-forms/tmp/' . $file_upload;
 
-    
+
     $url = 'https://app.seker.live/fm1/form-data';
     $data = array(
       'externalId' => 'KEfdt',
@@ -107,9 +107,10 @@ function send_data_to_api($form_data)
             'Content-Type' => 'application/image'
           ]
         ]
-    ]];
+      ]
+    ];
     $request = new \GuzzleHttp\Psr7\Request('POST', $url);
-    $res = $client->sendAsync($request, $options)->wait(); 
+    $res = $client->sendAsync($request, $options)->wait();
     $body = $res->getBody();
     $body = json_decode($body);
     if ($res->getStatusCode() == '200') {
@@ -118,7 +119,6 @@ function send_data_to_api($form_data)
       $form_data['actions']['success_message'] = 'הטופס לא נשלח';
       error_log($res->getStatusCode());
     }
-
-      }
+  }
   return $form_data;
 }
